@@ -1,0 +1,12 @@
+<meta charset="UTF-8"/>
+<form name="fm"><input type="number" name="a" value="1"/> <input type="number" name="b" value="1"/><h1 id="rs"></h1></form>
+<script>
+function perimeter(a, b) 
+{
+    a=parseInt(a); b=parseInt(b); a= isNaN(a) ?0:a; b= isNaN(b)?0:b;
+    return a===b?("Area of "+a+" * "+b+" = "+(a*b)):("Perimeter of "+a+" + "+b+" = "+((a+b)));  
+}
+var fm=document.forms.fm; rs=document.getElementById('rs');
+fm.a.addEventListener('keyup', ()=>{rs.innerText=perimeter(fm.a.value, fm.b.value);});
+fm.b.addEventListener('keyup', ()=>{rs.innerText=perimeter(fm.a.value, fm.b.value);});
+</script>
